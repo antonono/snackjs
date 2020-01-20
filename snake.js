@@ -1,22 +1,29 @@
+function getRandomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+}
+
 class Model {
-  constructor() {}
-  var grille = [[0,1,1,1,1,1,1,1,1,1,1,0],
+  constructor() {
+    this.food = [getRandomInt(10)+1,getRandomInt(10)+1];
+    console.log(this.food[0] + " " + this.food[1]);
+  }
+  grille =      [[0,1,1,1,1,1,1,1,1,1,1,0],
                 [0,1,1,1,1,1,1,1,1,1,1,0],
                 [0,1,1,1,1,1,1,1,1,1,1,0],
-                [0,1,1,1,1,1,1,1,1,1,1,0]
-                [0,1,1,1,1,1,1,1,1,1,1,0]
-                [0,1,1,1,1,1,1,1,1,1,1,0]
-                [0,1,1,1,1,1,1,1,1,1,1,0]
-                [0,1,1,1,1,1,1,1,1,1,1,0]
-                [0,1,1,1,1,1,1,1,1,1,1,0]
+                [0,1,1,1,1,1,1,1,1,1,1,0],
+                [0,1,1,1,1,1,1,1,1,1,1,0],
+                [0,1,1,1,1,1,1,1,1,1,1,0],
+                [0,1,1,1,1,1,1,1,1,1,1,0],
+                [0,1,1,1,1,1,1,1,1,1,1,0],
+                [0,1,1,1,1,1,1,1,1,1,1,0],
                 [0,1,1,1,1,1,1,1,1,1,1,0]];
-  var positiontete = [4,4];
-  var food = [Random(10)+1,Random(10)+1];
+  positiontete = [4,4];
+  food = [getRandomInt(10)+1,getRandomInt(10)+1];
 }
 
 class View {
   constructor() {}
-  
+
 }
 
 class Controller {
@@ -27,3 +34,4 @@ class Controller {
 }
 
 const app = new Controller(new Model(), new View())
+var modele = new Model();
