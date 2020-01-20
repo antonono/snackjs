@@ -5,7 +5,7 @@ function getRandomInt(max) {
 class Model {
   constructor() {
     this.food = [getRandomInt(10)+1,getRandomInt(10)+1];
-    console.log(this.food[0] + " " + this.food[1]);
+    this.grille[this.food[0]][this.food[1]]=2
   }
   grille =      [[0,1,1,1,1,1,1,1,1,1,1,0],
                 [0,1,1,1,1,1,1,1,1,1,1,0],
@@ -19,6 +19,15 @@ class Model {
                 [0,1,1,1,1,1,1,1,1,1,1,0]];
   positiontete = [4,4];
   food = [getRandomInt(10)+1,getRandomInt(10)+1];
+  changepostion(position){
+    switch (position) {
+      case "left":this.positiontete[0]=this.positiontete[0]-1;break;
+      case "right":this.positiontete[0]=this.positiontete[0]+1;break;
+      case "up":this.positiontete[1]=this.positiontete[1]+1;break;
+      case "down":this.positiontete[1]=this.positiontete[1]-1;break;
+      default:break;
+    }
+  }
 }
 
 class View {
