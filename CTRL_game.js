@@ -1,12 +1,15 @@
 class Ctrl_game{
 
+
     constructor(model,view){
+      this.touchePress = 'right';
+      this.direction = 'right';
+      this.etat = 1 ;
       this.model = model ;
       this.view = view ;
-      this.touchePress = null;
-      this.direction = 'right' ;
+
       document.addEventListener('keydown', (event) => {
-                                                      const nomTouche = event.key;this.touchePress='nomTouche';
+                                                      const nomTouche = event.key;this.touchePress=nomTouche;
                                                     }, false);
     }
 
@@ -19,12 +22,10 @@ class Ctrl_game{
     deroulementPartie(){
           //while(this.partie != 0){
           //}
-          while(true){
-              setTimeout(this.avancement, 500); //
-          }
+              setInterval(this.avancement, 500); //
   }
 
-  avancement(){
+  avancement =() =>{
     var position ;
     var positionInv ;
     switch(this.touchePress){
@@ -32,7 +33,7 @@ class Ctrl_game{
       case "ArrowDown" : position = 'down';break;
       case "ArrowLeft" : position = 'left';break;
       case "ArrowRight" : position = 'right';break;
-      default : break;
+      default : position = 'right';break;
     }
     switch(this.direction){
       case "up" : positionInv = 'down';break;
@@ -41,12 +42,12 @@ class Ctrl_game{
       case "right" : positionInv = 'left';break;
     }
     if(position != positionInv){
-          model.changeposition(position);
+          this.etat = this.model.changeposition(position);
+          this.direction = position ;
     }
+    //console.log(this);
+    console.log(position +" + "+positionInv);
   }
 
 
 }
-
-var game = new Ctrl_game();
-game.deroulementPartie();
