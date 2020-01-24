@@ -27,9 +27,4 @@ class View {
     }
   }
 
-  intervalleimage(){
-    this.changefruitposition;
-    this.actualise(this.grille,this.positiontete,this.context);
-  }
-
 }
