@@ -14,14 +14,17 @@ class View {
 
 
   actualise(grille,positiontete,context) {
-    //this.afficheimage(positiontete[0],positiontete[1],context,'./images/headsnake.png');
+    this.afficheimage(positiontete[0],positiontete[1],context,'./images/headsnake.png');
     for(var i=0;i<12;i++){
       for(var j=0;j<12;j++){
-        if(grille[i][j]==3){
+        if(grille[i][j]==2){
             this.afficheimage(i,j,context,'./images/food.png');
         }
         if(grille[i][j]==0){
           this.afficheimage(i,j,context,'./images/wall.png');
+        }
+        if(grille[i][j]==-1){
+          this.afficheimage(i,j,context,'./images/bodysnake.png');
         }
       }
     }
