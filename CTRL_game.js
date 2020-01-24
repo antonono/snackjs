@@ -1,6 +1,8 @@
 class Ctrl_game{
 
-    constructor(){
+    constructor(model,view){
+      this.model = model ;
+      this.view = view ;
       this.touchePress = null;
       this.direction = 'right' ;
       document.addEventListener('keydown', (event) => {
