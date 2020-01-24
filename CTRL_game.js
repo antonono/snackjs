@@ -46,7 +46,7 @@ class Ctrl_game{
           this.direction = position ;
     }
     //console.log(this);
-    console.log(position +" + "+positionInv);
+    this.view.actualise(this.model.grille,this.model.positiontete,this.view.context);
   }
 
 
