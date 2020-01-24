@@ -19,7 +19,9 @@ class Ctrl_game{
     deroulementPartie(){
           //while(this.partie != 0){
           //}
-          setTimeout(this.avancement, 500); //
+          while(true){
+              setTimeout(this.avancement, 500); //
+          }
   }
 
   avancement(){
@@ -39,7 +41,7 @@ class Ctrl_game{
       case "right" : positionInv = 'left';break;
     }
     if(position != positionInv){
-          changepostion(position);
+          model.changeposition(position);
     }
   }
 
