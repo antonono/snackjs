@@ -1,26 +1,24 @@
 class Ctrl_game{
 
 
-    constructor(model,view){
+    constructor(model,view,vitesse){
       this.touchePress = 'right';
       this.direction = 'right';
-      this.etat = 1 ;
+      this.etat = 0 ;
       this.model = model ;
       this.view = view ;
+      this.vitesse = vitesse ;
 
       document.addEventListener('keydown', (event) => {
                                                       const nomTouche = event.key;this.touchePress=nomTouche;
                                                     }, false);
     }
 
-    lancerPartie(){
-      this.partie = 1 ;
-      let snake = new Snake();
-
-    }
 
     deroulementPartie(){
-      setInterval(this.avancement, 300); //
+          //while(this.partie != 0){
+          //}
+              setInterval(this.avancement, this.vitesse); //
   }
 
   avancement =() =>{
@@ -43,8 +41,18 @@ class Ctrl_game{
           this.etat = this.model.changeposition(position);
           this.direction = position ;
     }
-    this.view.actualise(this.model.grille,this.model.positiontete,this.view.context,this.model.direction);
+    else{
+      this.etat = this.model.changeposition(this.direction);
+    }
     //console.log(this);
+    this.view.actualise(this.model.grille,this.model.positiontete,this.view.context);
+    if(this.etat == -1){
+      clearInterval();
+    }
+    if(this.etat == 1 ){
+      this.model.addqueue();
+      this.model.changefruitposition();
+    }
   }
 
 
