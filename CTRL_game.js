@@ -50,8 +50,8 @@ class Ctrl_game{
       clearInterval();
     }
     if(this.etat == 1 ){
-      this.model.addqueue();
       this.model.changefruitposition();
+      console.log("5: " + this.model.food);
     }
   }
 

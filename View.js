@@ -49,6 +49,7 @@ class View {
 
 
   actualise=(grille,positiontete,context,direction) => {
+    console.log(grille);
     for(var i=0;i<12;i++){
       for(var j=0;j<12;j++){
         if(grille[i][j]==2){
@@ -65,8 +66,6 @@ class View {
         }
       }
     }
-    console.log("1: " +positiontete[0]);
-    console.log("2: " +positiontete[1]);
    this.affichetete(positiontete[0],positiontete[1],context,IMG4,direction);
 //    this.afficheimage(positiontete[0],positiontete[1],context,'./images/headsnake.png');
   }

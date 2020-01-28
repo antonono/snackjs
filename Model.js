@@ -43,10 +43,12 @@ class Model {
     return 0;
   }
 
-  changefruitposition(){
-    this.grille[this.food[0]][this.food[1]]==1;
+  changefruitposition = () => {
+    console.log(this);
+    this.grille[this.food[0]][this.food[1]]=1;
     this.food=[getRandomInt(10)+1,getRandomInt(10)+1];
-    this.grille[this.food[0]][this.food[1]]==2;
+    this.grille[this.food[0]][this.food[1]]=2;
+    console.log(this.food);
   }
 
   addqueue(x,y){
