@@ -17,6 +17,7 @@ class Model {
                   [0,1,1,1,1,1,1,1,1,1,1,0],
                   [0,0,0,0,0,0,0,0,0,0,0,0]];
     this.grille[this.food[0]][this.food[1]]=2;
+    console.log(this.food[0] + " " + this.food[1]);
   }
 
 
@@ -24,8 +25,8 @@ class Model {
     switch (position) {
       case "left":this.positiontete[0]=this.positiontete[0]-1;this.direction="left";break;
       case "right":this.positiontete[0]=this.positiontete[0]+1;this.direction="right";break;
-      case "up":this.positiontete[1]=this.positiontete[1]+1;this.direction="up";break;
-      case "down":this.positiontete[1]=this.positiontete[1]-1;this.direction="down";break;
+      case "up":this.positiontete[1]=this.positiontete[1]-1;this.direction="up";break;
+      case "down":this.positiontete[1]=this.positiontete[1]+1;this.direction="down";break;
       default:break;
     }
     if(this.grille[this.positiontete[0],this.positiontete[1]]<=0)

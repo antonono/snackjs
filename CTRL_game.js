@@ -20,9 +20,7 @@ class Ctrl_game{
     }
 
     deroulementPartie(){
-          //while(this.partie != 0){
-          //}
-              setInterval(this.avancement, 500); //
+      setInterval(this.avancement, 300); //
   }
 
   avancement =() =>{
@@ -45,8 +43,8 @@ class Ctrl_game{
           this.etat = this.model.changeposition(position);
           this.direction = position ;
     }
+    this.view.actualise(this.model.grille,this.model.positiontete,this.view.context,this.model.direction);
     //console.log(this);
-    this.view.actualise(this.model.grille,this.model.positiontete,this.view.context);
   }
 
 
