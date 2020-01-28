@@ -14,11 +14,6 @@ class Ctrl_game{
                                                     }, false);
     }
 
-    lancerPartie(){
-      this.partie = 1 ;
-      let snake = new Snake();
-
-    }
 
     deroulementPartie(){
           //while(this.partie != 0){
@@ -45,6 +40,9 @@ class Ctrl_game{
     if(position != positionInv){
           this.etat = this.model.changeposition(position);
           this.direction = position ;
+    }
+    else{
+      this.etat = this.model.changeposition(this.direction);
     }
     //console.log(this);
     this.view.actualise(this.model.grille,this.model.positiontete,this.view.context);
