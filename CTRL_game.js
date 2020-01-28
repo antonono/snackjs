@@ -52,6 +52,11 @@ class Ctrl_game{
       clearInterval();
     }
     if(this.etat == 1 ){
+<<<<<<< HEAD
+=======
+      this.score++;
+      this.model.addqueue();
+>>>>>>> 617e586ec30cb5a0cbb8a7acf3026283192f6d70
       this.model.changefruitposition();
       console.log("5: " + this.model.food);
     }
