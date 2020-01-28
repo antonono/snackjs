@@ -59,7 +59,7 @@ class Ctrl_game{
   }
 
   finDePartie(){
-    alert("Game Over :  vous avez fait un score de "+this.score;)
+    alert("Game Over :  vous avez fait un score de "+this.score);
   }
 
 
