@@ -21,7 +21,7 @@ class Model {
   }
 
 
-  changeposition(position){
+  changeposition = (position) =>{
     switch (position) {
       case "left":this.positiontete[0]=this.positiontete[0]-1;this.direction="left";break;
       case "right":this.positiontete[0]=this.positiontete[0]+1;this.direction="right";break;
@@ -29,10 +29,17 @@ class Model {
       case "down":this.positiontete[1]=this.positiontete[1]+1;this.direction="down";break;
       default:break;
     }
-    if(this.grille[this.positiontete[0],this.positiontete[1]]<=0)
-        return -1;
-    if(this.grille[this.positiontete[0],this.positiontete[1]]==2)
+    console.log(this.grille[this.positiontete[0]][this.positiontete[1]]);
+    if(this.grille[this.positiontete[0]][this.positiontete[1]]<=0){
+      console.log("mur");
+      return -1;
+    }
+
+    if(this.grille[this.positiontete[0]][this.positiontete[1]]==2)
+    {
+        console.log("fruit");
         return 1;
+    }
     return 0;
   }
 
