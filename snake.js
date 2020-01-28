@@ -24,7 +24,7 @@ IMG5.addEventListener("load",verifchargement(lancerapp));
 IMG6.addEventListener("load",verifchargement(lancerapp));
 
 
-<<<<<<< HEAD
+
 function verifchargement(callback){
   if(cpt>=5){
     callback();
@@ -35,12 +35,6 @@ function verifchargement(callback){
 }
 
 function lancerapp(){
-  const app = new Ctrl_game(new Model(), new View());
+  const app = new Ctrl_game(new Model(), new View(),400);
   app.deroulementPartie();
 }
-=======
-const app = new Ctrl_game(new Model(), new View(),400);
-app.model.changefruitposition();
-app.view.actualise(app.model.grille,app.model.positiontete,app.view.context);
-app.deroulementPartie();
->>>>>>> f440701dbbf95be75a84cc51f02d8d3a28911cdb

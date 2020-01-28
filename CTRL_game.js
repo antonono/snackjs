@@ -45,7 +45,7 @@ class Ctrl_game{
       this.etat = this.model.changeposition(this.direction);
     }
     //console.log(this);
-    this.view.actualise(this.model.grille,this.model.positiontete,this.view.context);
+    this.view.actualise(this.model.grille,this.model.positiontete,this.view.context,this.model.direction);
     if(this.etat == -1){
       clearInterval();
     }
