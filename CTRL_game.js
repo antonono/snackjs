@@ -5,6 +5,7 @@ class Ctrl_game{
       this.touchePress = 'right';
       this.direction = 'right';
       this.etat = 0 ;
+      this.score = 0 ;
       this.model = model ;
       this.view = view ;
       this.vitesse = vitesse ;
@@ -47,12 +48,18 @@ class Ctrl_game{
     //console.log(this);
     this.view.actualise(this.model.grille,this.model.positiontete,this.view.context,this.model.direction);
     if(this.etat == -1){
+      finDePartie();
       clearInterval();
     }
     if(this.etat == 1 ){
+      this.score++;
       this.model.addqueue();
       this.model.changefruitposition();
     }
+  }
+
+  finDePartie(){
+    alert("Game Over :  vous avez fait un score de "+this.score;)
   }
 
 
