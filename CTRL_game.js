@@ -1,12 +1,13 @@
 class Ctrl_game{
 
 
-    constructor(model,view){
+    constructor(model,view,vitesse){
       this.touchePress = 'right';
       this.direction = 'right';
       this.etat = 0 ;
       this.model = model ;
       this.view = view ;
+      this.vitesse = vitesse ;
 
       document.addEventListener('keydown', (event) => {
                                                       const nomTouche = event.key;this.touchePress=nomTouche;
@@ -22,7 +23,7 @@ class Ctrl_game{
     deroulementPartie(){
           //while(this.partie != 0){
           //}
-              setInterval(this.avancement, 500); //
+              setInterval(this.avancement, this.vitesse); //
   }
 
   avancement =() =>{

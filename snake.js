@@ -5,7 +5,7 @@ function getRandomInt(max) {
 
 
 
-const app = new Ctrl_game(new Model(), new View());
+const app = new Ctrl_game(new Model(), new View(),100);
 app.model.changefruitposition();
 app.view.actualise(app.model.grille,app.model.positiontete,app.view.context);
 app.deroulementPartie();
