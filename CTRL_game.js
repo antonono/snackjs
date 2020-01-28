@@ -4,7 +4,7 @@ class Ctrl_game{
     constructor(model,view){
       this.touchePress = 'right';
       this.direction = 'right';
-      this.etat = 1 ;
+      this.etat = 0 ;
       this.model = model ;
       this.view = view ;
 
@@ -47,6 +47,13 @@ class Ctrl_game{
     }
     //console.log(this);
     this.view.actualise(this.model.grille,this.model.positiontete,this.view.context);
+    if(this.etat == -1){
+      clearInterval();
+    }
+    if(this.etat == 1 ){
+      this.model.addqueue();
+      this.model.changefruitposition();
+    }
   }
 
 
