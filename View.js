@@ -49,7 +49,6 @@ class View {
 
 
   actualise=(grille,positiontete,context,direction) => {
-    console.log(grille);
     for(var i=0;i<12;i++){
       for(var j=0;j<12;j++){
         if(grille[i][j]==2){

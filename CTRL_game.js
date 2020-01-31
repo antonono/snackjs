@@ -45,10 +45,14 @@ class Ctrl_game{
     else{
       this.etat = this.model.changeposition(this.direction);
     }
-    //console.log(this);
+    if(this.model.queue != 0){
+      if(this.model.needqueue == false)
+        this.model.avancequeue()
+    }
+    this.model.needqueue && this.model.addqueue(this.model.posqueuex,this.model.posqueuey);
     this.view.actualise(this.model.grille,this.model.positiontete,this.view.context,this.model.direction);
     if(this.etat == -1){
-      finDePartie();
+      this.finDePartie();
       clearInterval();
     }
     if(this.etat == 1 ){
