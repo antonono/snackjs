@@ -3,9 +3,64 @@
 	<head>
 		<meta charset="utf-8">
 		<title>snake</title>
+		<style>
+	                #promptCompat{
+	                        display: none;
+	                }
+	                #promptCompat.no_dialog{
+	                        box-shadow: 0 0 5px 2px red;
+	                        padding: 10px;
+	                        display: block;
+	                        text-align: center;
+	                        font-weight: bold;
+	                }
+	                .boutons{
+	                        padding: 10px;
+	                }
+	                dialog{
+	                        border-radius: 10px;
+	                        box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+	                }
+	                dialog::backdrop{
+	                        background-color: rgba(0, 0, 0, 0.6);
+	                }
+									table{
+										margin-left: auto;
+										margin-right: auto;
+									}
+									th{
+										margin-left: auto;
+										margin-right: auto;
+									}
+									button{
+										margin-left: auto;
+										margin-right: auto;
+									}
+	        </style>
 	</head>
 	<body>
-    <canvas id="canvas" width="700" height="700" style="background: url('./images/boardgame.png')"></canvas>
+    <canvas id="canvas" z-index="1" width="700" height="700" style="background: url('./images/boardgame.png')"></canvas>.
+		<div id="score" style="font-size: 30px;"></div>
+		<dialog id="mydialog" z-index="10">
+			<h1 id="titreScore"></h1>
+			<h2>Voici le tableau des scores </h2>
+			<table id="tabeauScore">
+					<th>Rang</th>
+					<th>Pseudo</th>
+					<th>Score</th>
+			</table>
+			<button onclick="location.reload() ;">Rejouer !</button>
+		</dialog>
+		<dialog id="dialogIntro" z-index="11">
+			<h2>Bienvenu sur notre SNAKE </h2>
+			<div>Votre Pseudo <input id="pseudoInput"/></div>
+			<label for="couleur">Choissisez la couleur de votre serpent:</label>
+			<select id="couleur">
+					<option value="1">Vert</option>
+					<option value="2">Bleu</option>
+			</select>
+			<button onclick="lancerDeroulement();">Valider</button>
+		</dialog>
 		<script src="Model.js"></script>
 		<script src="ModelQueue.js"></script>
 		<script src="View.js"></script>

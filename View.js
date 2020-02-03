@@ -69,4 +69,10 @@ class View {
 //    this.afficheimage(positiontete[0],positiontete[1],context,'./images/headsnake.png');
   }
 
+  afficheScore(score){
+    const divScore = document.getElementById("score");
+    console.log(divScore);
+    divScore.innerHTML = "score = "+score ;
+  }
+
 }

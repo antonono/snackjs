@@ -35,6 +35,13 @@ function verifchargement(callback){
 }
 
 function lancerapp(){
-  const app = new Ctrl_game(new Model(), new View(),400);
-  app.deroulementPartie();
+  this.app = new Ctrl_game(new Model(), new View(),400);
+}
+
+function lancerDeroulement(couleur){
+    this.app.deroulementPartie();
+    if(document.getElementById("couleur").value == 2){
+        IMG1.src='./images/bodysnakeBleu.png';
+        IMG4.src='./images/headsnakeBleu.png';
+    }
 }
